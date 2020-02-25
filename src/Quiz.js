@@ -16,8 +16,15 @@ class Quiz extends Component {
     }
 
     showNextQuestion() {
+        this.setState((state, props) => ({
+            quiz_position: state.quiz_position + 1
+        }));
+    };
 
-    }
+/*    const showNextQuestion = () => (
+        this.setState(this.state.quiz_position + 1);
+
+);*/
 
     render() {
         const isQuizEnd = (this.state.quiz_position -1) === quizData.quiz_questions.length;
